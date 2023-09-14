@@ -1,5 +1,14 @@
+## Install mesalib
+DMC environments require the mesalib library to function correctly. We recommend to create a virtual environment with [Anaconda](https://anaconda.org/) or [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/)  and run the following commands:
+
+```bash
+conda create -n myenv python=3.10
+conda activate myenv
+conda install -c conda-forge mesalib
+```
+
 ## Install Gymnasium MuJoCo/DMC environments
-First you should install the proper environments:
+Now, you should install the proper environments:
 
 - MuJoCo (Gymnasium): you do not need to install extra pakages, the `pip install -e .` command is enough to have available all the MuJoCo environments provided by Gymnasium (https://gymnasium.farama.org/environments/mujoco/)
 - DMC: you have to install extra packages with the following command: `pip install -e .[dmc]`. (https://github.com/deepmind/dm_control).
