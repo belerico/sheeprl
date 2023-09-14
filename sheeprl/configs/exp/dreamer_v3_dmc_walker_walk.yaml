@@ -11,13 +11,11 @@ total_steps: 1000000
 cnn_keys:
   encoder:
     - rgb
-mlp_keys:
-  encoder:
-    - state
 
 # Environment
 env:
-  num_envs: 1
+  num_envs: 4
+  action_repeat: 2
   max_episode_steps: 1000
   id: walker_walk
   env:
