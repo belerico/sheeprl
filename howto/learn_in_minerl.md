@@ -26,9 +26,9 @@ We have modified the MineRL environments to have a custom action and observation
 > **Note**
 > If you want to use a *MineRL* environment, you must specify it, for example, by setting `env=minerl` in the cli arguments or by creating your custom config file.
 >
-> In all these environments, it is possible to have or not a dense reward, you can set the type of the reward by setting the `env.env.dense` argument to `True` if you want a dense reward, to `False` otherwise.
+> In all these environments, it is possible to have or not a dense reward, you can set the type of the reward by setting the `env.wrapper.dense` argument to `True` if you want a dense reward, to `False` otherwise.
 >
-> In the Navigate task, it is also possible to choose wheter or not to train the agent on an extreme environment (for more info, check [here](https://minerl.readthedocs.io/en/v0.4.4/environments/index.html#minerlnavigateextreme-v0)). To choose wheter or not to train the agent on an extreme environment, you need to set the `env.env.extreme` argument to `True` or `False`.
+> In the Navigate task, it is also possible to choose wheter or not to train the agent on an extreme environment (for more info, check [here](https://minerl.readthedocs.io/en/v0.4.4/environments/index.html#minerlnavigateextreme-v0)). To choose wheter or not to train the agent on an extreme environment, you need to set the `env.wrapper.extreme` argument to `True` or `False`.
 >
 > In addition, in all the environments, it is possible to set the break speed multiplier through the `env.break_speed_multiplier` argument.
 
@@ -54,5 +54,5 @@ Finally we added sticky action for the `jump` and `attack` actions. You can set 
 ## Headless machines
 
 If you work on a headless machine, you need to software renderer. We recommend to adopt one of the following solutions:
-1. Install the `xvfb` software with the `sudo apt install xvfb` command and prefix the train command with `xvfb-run`. For instance, to train DreamerV2 on the navigate task on an headless machine, you need to run the following command: `xvfb-run lightning run model --devices=1 sheeprl.py dreamer_v3 exp=dreamer_v3 env=minerl env.id=custom_navigate cnn_keys.encoder=[rgb]`.
+1. Install the `xvfb` software with the `sudo apt install xvfb` command and prefix the train command with `xvfb-run`. For instance, to train DreamerV2 on the navigate task on an headless machine, you need to run the following command: `xvfb-run python sheeprl.py exp=dreamer_v3 fabric.devices=1 env=minerl env.id=custom_navigate cnn_keys.encoder=[rgb]`.
 2. Exploit the [PyVirtualDisplay](https://github.com/ponty/PyVirtualDisplay) package.
